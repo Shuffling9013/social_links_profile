@@ -14,22 +14,25 @@
 
   --font-size: clamp(
     14px,
-    calc(14px + (100vw - 375px) * (20 - 14) / (1440 - 375)),
-    20px
+    calc(14px + (100vw - 375px) * (18 - 14) / (1440 - 375)),
+    18px
   );
-  --min-width: 19em;
+
   --font-family: Inter, Arial, Helvetica, sans-serif;
 
   --font-preset-1: 700 1.625em var(--font-family);
   --font-preset-2: 600 1em var(--font-family);
   --font-preset-3: 400 1em var(--font-family);
+
+  --max-width: 22em;
+  --padding: 1em;
 }
 
 @media (min-width: 1440px) {
   :root {
-    --font-preset-1: 700 1.25em var(--font-family);
-    --font-preset-2: 600 0.75em var(--font-family);
-    --font-preset-3: 400 0.75em var(--font-family);
+    --font-preset-1: 700 1.5em var(--font-family);
+    --font-preset-2: 600 0.875em var(--font-family);
+    --font-preset-3: 400 0.875em var(--font-family);
   }
 }
 
@@ -52,10 +55,11 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 2em;
-  min-width: var(--min-width);
 
-  padding-block: 2em;
-  padding-inline: 2em;
+  width: 100%;
+  max-width: var(--max-width);
+
+  padding: calc(1em + 1vw);
 
   border-radius: 0.625em;
 
