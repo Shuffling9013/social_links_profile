@@ -1,0 +1,120 @@
+@font-face {
+  font-family: Inter;
+  font-weight: 400 600 700;
+  font-display: swap;
+  src: url("../public/fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+
+:root {
+  --green: hsl(75 94% 57%);
+  --white: hsl(0 0% 100%);
+  --grey-700: hsl(0 0% 20%);
+  --grey-800: hsl(0 0% 12%);
+  --grey-900: hsl(0 0% 8%);
+
+  --font-size: clamp(
+    14px,
+    calc(14px + (100vw - 375px) * (20 - 14) / (1440 - 375)),
+    20px
+  );
+  --min-width: 19em;
+  --font-family: Inter, Arial, Helvetica, sans-serif;
+
+  --font-preset-1: 700 1.625em var(--font-family);
+  --font-preset-2: 600 1em var(--font-family);
+  --font-preset-3: 400 1em var(--font-family);
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --font-preset-1: 700 1.25em var(--font-family);
+    --font-preset-2: 600 0.75em var(--font-family);
+    --font-preset-3: 400 0.75em var(--font-family);
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  font-weigth: 400;
+  font-size: var(--font-size);
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-color: var(--grey-900);
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  min-width: var(--min-width);
+
+  padding-block: 2em;
+  padding-inline: 2em;
+
+  border-radius: 0.625em;
+
+  background-color: var(--grey-800);
+  color: var(--white);
+}
+
+.profile img {
+  border-radius: 100%;
+  width: 4.5em;
+}
+
+.profile article {
+  text-align: center;
+}
+
+.profile article h1 {
+  font: var(--font-preset-1);
+}
+
+.profile article h2 {
+  margin-block-start: 0.75em;
+  font: var(--font-preset-2);
+  color: var(--green);
+}
+
+.profile article p {
+  margin-block-start: 2em;
+  font: var(--font-preset-3);
+}
+
+.profile footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+}
+
+.profile a {
+  display: block;
+  padding-block: 1em;
+  width: 100%;
+
+  border: none;
+  border-radius: 0.5em;
+  text-align: center;
+
+  background-color: var(--grey-700);
+  color: var(--white);
+
+  font: var(--font-preset-2);
+
+  &:focus {
+    outline: 0.125em solid var(--green);
+  }
+
+  &:hover {
+    transition: background-color 0.5s;
+    background-color: var(--green);
+    color: var(--grey-700);
+  }
+}
